@@ -24,6 +24,7 @@ export const renderHits = (images) => {
     .join('');
 
   gallery.innerHTML = markup;
+  lightbox.refresh();
 };
 
 const lightbox = new SimpleLightbox('.gallery a');

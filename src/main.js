@@ -35,7 +35,6 @@ form.addEventListener('submit', event => {
         return;
       }
       renderHits(images);
-      lightbox.refresh();
     })
     .catch(error => {
       console.log(error);
