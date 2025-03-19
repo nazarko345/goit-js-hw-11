@@ -7,6 +7,7 @@ export const renderHits = (images) => {
   const markup = images
     .map(
       ({ largeImageURL, webformatURL, tags, likes, views, comments, downloads }) => `
+  <li class="gallery-item">
     <a class="gallery-item" href="${largeImageURL}">
       <div class="photo-card">
         <img src="${webformatURL}" alt="${tags}" />
@@ -17,15 +18,15 @@ export const renderHits = (images) => {
           <p><b>Downloads:</b> ${downloads}</p>
         </div>
       </div>
-    </a>`
+    </a>
+  </li>`
     )
     .join('');
 
   gallery.innerHTML = markup;
 };
 
-export const lightbox = new SimpleLightbox('.gallery a');
-lightbox.refresh();
+const lightbox = new SimpleLightbox('.gallery a');
 
 export function galleryClean() {
   gallery.innerHTML = '';
